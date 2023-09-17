@@ -25,7 +25,6 @@ kotlin {
             baseName = "shared"
             isStatic = true
         }
-        extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
     }
 
     sourceSets {
@@ -37,14 +36,33 @@ kotlin {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
                 // Works as common dependency as well as the platform one
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0-RC")
+                implementation(libs.kotlinx.serialization.json)
+
+                implementation(libs.ktor.client.logging)
+                implementation(libs.kermit)
+                implementation(libs.qdsfdhvh.imageloader)
+                // optional - Moko Resources Decoder
+                implementation(libs.qdsfdhvh.imageloader.moko)
+                // optional - Blur Interceptor (only support bitmap)
+                implementation(libs.qdsfdhvh.imageloader.blur)
+
             }
         }
         val androidMain by getting {
             dependencies {
-                api("androidx.activity:activity-compose:1.6.1")
-                api("androidx.appcompat:appcompat:1.6.1")
-                api("androidx.core:core-ktx:1.9.0")
+                api(libs.androidx.activity.compose)
+                api(libs.androidx.appcompat)
+                api(libs.androidx.core.ktx)
+                implementation(libs.ktor.client.cio)
+
+                implementation(libs.qdsfdhvh.imageloader)
+                // optional - Moko Resources Decoder
+                implementation(libs.qdsfdhvh.imageloader.moko)
+                // optional - Blur Interceptor (only support bitmap)
+                implementation(libs.qdsfdhvh.imageloader.blur)
+
+                implementation(libs.android.renderscript.toolkit)
+
             }
         }
         val iosX64Main by getting
@@ -55,10 +73,16 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+            dependencies{
+                implementation(libs.ktor.client.darwin)
+            }
+
         }
         val desktopMain by getting {
             dependencies {
+                dependsOn(commonMain)
                 implementation(compose.desktop.common)
+                implementation(libs.ktor.client.cio)
             }
         }
     }

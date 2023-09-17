@@ -1,6 +1,7 @@
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -13,11 +14,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import utils.ImageItem
 import data.IplReadData
 import kotlinx.serialization.json.Json
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.resource
+import screen.ShowHomeScreen
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
@@ -26,27 +29,35 @@ fun App() {
     LaunchedEffect("Home"){
         readJson()
     }
-
     MaterialTheme {
-        var greetingText by remember { mutableStateOf("Hello, World!") }
-        var showImage by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = {
-                greetingText = "Hello, ${getPlatformName()}"
-                showImage = !showImage
-            }) {
-                Text(greetingText)
-            }
-            AnimatedVisibility(showImage) {
-                Image(
-                    painterResource("compose-multiplatform.xml"),
-                    null
-                )
-            }
-        }
+        ShowHomeScreen()
     }
 }
 
+@OptIn(ExperimentalResourceApi::class)
+@Composable
+fun ShowMainView(){
+    var greetingText by remember { mutableStateOf("Hello, World!") }
+    var showImage by remember { mutableStateOf(false) }
+    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+        Button(onClick = {
+            greetingText = "Hello, ${getPlatformName()}"
+            showImage = !showImage
+        }) {
+            Text(greetingText)
+        }
+        AnimatedVisibility(showImage) {
+            Column {
+                Image(
+                    painterResource("compose-multiplatform.xml"), null
+                )
+                ImageItem(modifier = Modifier.aspectRatio(1.0F),data = "https://www.countryflags.com/wp-content/uploads/india-flag-png-large.png",
+                    blurRadius =  0)
+            }
+
+        }
+    }
+}
 
 @OptIn(ExperimentalResourceApi::class)
 suspend fun readJson():IplReadData?{

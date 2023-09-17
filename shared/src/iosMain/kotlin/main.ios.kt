@@ -1,5 +1,6 @@
 import androidx.compose.ui.window.ComposeUIViewController
 import platform.Foundation.NSLog
+import screen.ShowHomeScreen
 
 
 actual fun getPlatformName(): String = "iOS"
