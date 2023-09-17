@@ -3,6 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.compose")
+    kotlin("plugin.serialization") version "1.9.0"
 }
 
 kotlin {
@@ -35,6 +36,8 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+                // Works as common dependency as well as the platform one
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0-RC")
             }
         }
         val androidMain by getting {

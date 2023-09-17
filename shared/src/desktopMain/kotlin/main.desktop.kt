@@ -10,3 +10,7 @@ actual fun getPlatformName(): String = "Desktop"
 fun AppPreview() {
     App()
 }
+
+actual fun printLog(msg:String){
+    print("Desktop:: $msg")
+}
