@@ -7,13 +7,13 @@ Get started with compose multiplatform by importing this project with Android St
 
 See the result on app running on Android, ios and Desktop of Mac OS.
 
-It demostrate following common code approach.
+## It demonstrate following common code approach.
 
-1.Read & Parse JSON using common code.
-2.Render List using using 100% Compose UI with Kotlin
-3.Perform list sorting.
-4.Use HTTP Client based on Platform targeted by the KMM
-5.Use common svg image for the icons.
+* 1.Read & Parse JSON using common code.
+* 2.Render List using using 100% Compose UI with Kotlin
+* 3.Perform list sorting.
+* 4.Use HTTP Client based on Platform targeted by the KMM
+* 5.Use common svg image for the icons.
 
 
 <img src="readme_images/compose_multiplatform.png" height="450">
