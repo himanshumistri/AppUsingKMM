@@ -1,7 +1,4 @@
-[![official project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-# [My Compose Multiplatform] Application
+# [My Compose Multiplatform](https://github.com/himanshumistri/AppUsingKMM/tree/main) Application
 
 Get started with compose multiplatform by importing this project with Android Studio Giraffe
 
@@ -18,6 +15,8 @@ See the result on app running on Android, ios and Desktop of Mac OS.
 
 <img src="readme_images/compose_multiplatform.png" height="450">
 
+[![official project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) application
 
