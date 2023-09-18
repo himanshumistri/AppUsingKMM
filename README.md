@@ -15,6 +15,11 @@ See the result on app running on Android, ios and Desktop of Mac OS.
 
 <img src="readme_images/compose_multiplatform.png" height="450">
 
+> **Note**
+> Make sure you have installed Kotlin Multiplatform Mobile so that Studio can detect iosApp module and can run 
+> ios app directly from android studio [KMM Plugin](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile).
+
+
 [![official project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
