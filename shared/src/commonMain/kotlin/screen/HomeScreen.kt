@@ -47,12 +47,12 @@ import data.SortType
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
-private var isMyData = false
 private var mHeaderHeight=58.dp
 private var mSpaceTxtImg = 20.dp
 private val HeaderColor = Color(0xFFAD1457)
 private val DarkGreen = Color(0xFF2E7D32) //
 private val TextColor = Color.White
+private val OFFWHILE = Color(0xFFF8F7F7)
 
 /**
  * @author Himanshu.Mistri
@@ -217,7 +217,7 @@ fun IplList(iplViewModel: IplViewModel){
                     Card(modifier = Modifier
                         .fillMaxWidth()
                         //CardDefaults.cardElevation(5.dp)
-                        .background(color = Color.White), elevation = 5.dp) {
+                        , elevation = 5.dp, backgroundColor = OFFWHILE) {
                         //modifier = Modifier.background(color = Color.LightGray) Check Row Color
                         Row(horizontalArrangement = Arrangement.spacedBy(4.dp), verticalAlignment = Alignment.CenterVertically) {
                             //Column 1
@@ -225,7 +225,7 @@ fun IplList(iplViewModel: IplViewModel){
                                 ImageItem(modifier = imgModifier.weight(0.40F) ,data = item.url,
                                     blurRadius =  0)
                                 Spacer(modifier = Modifier.width(5.dp))
-                                Text(text = item.teamName,modifier = Modifier.weight(0.60F), color = Color.Black, fontFamily = FontFamily.Monospace, fontSize = 16.sp)
+                                Text(text = item.teamName,modifier = Modifier.weight(0.60F), color = Color.Black, fontFamily = FontFamily.Monospace, fontSize = 12.sp)
                             }
                             //Column 2
                             Text(text = item.played.toString(),modifier = Modifier.weight(0.10F), color = Color.Black,

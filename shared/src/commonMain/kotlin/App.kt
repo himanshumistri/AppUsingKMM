@@ -21,8 +21,6 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.resource
 import screen.ShowHomeScreen
-
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
 
