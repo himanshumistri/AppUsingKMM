@@ -1,5 +1,24 @@
 [![official project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+# [My Compose Multiplatform] Application
+
+Get started with compose multiplatform by importing this project with Android Studio Giraffe
+
+See the result on app running on Android, ios and Desktop of Mac OS.
+
+It demostrate following common code approach.
+
+1.Read & Parse JSON using common code.
+2.Render List using using 100% Compose UI with Kotlin
+3.Perform list sorting.
+4.Use HTTP Client based on Platform targeted by the KMM
+5.Use common svg image for the icons.
+
+
+<img src="readme_images/compose_multiplatform.png" height="450">
+
+
 # [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) application
 
 > **Note**
